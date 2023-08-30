@@ -1,4 +1,12 @@
-const TodoItem = ({ id, completed, title, toggleTodo, deleteTodo }) => {
+const TodoItem = ({
+    id,
+    completed,
+    title,
+    editing,
+    toggleTodo,
+    deleteTodo,
+    toggleEditTodo,
+}) => {
     return (
         <li>
             <label htmlFor="todoCheckbox">
@@ -14,6 +22,14 @@ const TodoItem = ({ id, completed, title, toggleTodo, deleteTodo }) => {
                 the item will be delted on render
                 onClick={deleteTodo(id);}
             */}
+            <button
+                onClick={() => {
+                    toggleEditTodo(id);
+                }}
+                className="button"
+            >
+                Edit
+            </button>
             <button
                 onClick={() => {
                     deleteTodo(id);

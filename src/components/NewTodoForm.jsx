@@ -1,31 +1,42 @@
 import { useState } from "react";
 
-const NewTodoForm = ({ onSubmit }) => {
-    const [newItem, setNewItem] = useState("");
+const NewTodoForm = ({
+    title: todoTitle,
+    id,
+    onSubmit,
+    updateTodoTitle,
+    toggleEditTodo,
+}) => {
+    // If todoTitle is passed - use it
+    const [newItem, setNewItem] = useState(todoTitle || "");
 
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (todoTitle) {
+            updateTodoTitle(id, newItem);
+            toggleEditTodo(id);
+            return;
+        }
 
         if (newItem === "") return;
 
         onSubmit(newItem);
 
         setNewItem("");
-    }
+    };
 
     return (
         <form onSubmit={handleSubmit}>
             <div className="form-row">
-                <label htmlFor="item">Add todo</label>
                 {/* 
-                        onChange in react is triggered every time we click a key (in v.js we use onInput)
-                        --> causes rerender when we update state variable
-                        */}
+                    onChange in react is triggered every time we click a key (in v.js we use onInput)
+                    --> causes rerender when we update state variable
+                */}
                 <input
                     value={newItem}
                     onChange={(e) => setNewItem(e.target.value)}
                     type="text"
-                    id="item"
                 />
             </div>
             <button className="btn">Add</button>

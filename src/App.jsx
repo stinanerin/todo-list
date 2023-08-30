@@ -19,6 +19,7 @@ function App() {
             return currentTodos.map((todo) => {
                 if (todo.id === id) {
                     // todo.completed = completed;
+                    console.log(completed);
                     return { ...todo, completed };
                 }
                 // Return the unmodified todo if the ID doesn't match
@@ -37,8 +38,34 @@ function App() {
         setTodos((currentTodos) => {
             return [
                 ...currentTodos,
-                { id: crypto.randomUUID(), title, completed: false },
+                {
+                    id: crypto.randomUUID(),
+                    title,
+                    completed: false,
+                    editing: false,
+                },
             ];
+        });
+    };
+
+    const toggleEditTodo = (todoToUpdateId) => {
+        setTodos((currentTodos) => {
+            return currentTodos.map((todo) => {
+                if (todoToUpdateId === todo.id) {
+                    return { ...todo, editing: !todo.editing };
+                }
+                return todo;
+            });
+        });
+    };
+    const updateTodoTitle = (todoToUpdateId, updatedTitle) => {
+        setTodos((currentTodos) => {
+            return currentTodos.map((todo) => {
+                if (todoToUpdateId === todo.id) {
+                    return { ...todo, title: updatedTitle };
+                }
+                return todo;
+            });
         });
     };
 
@@ -50,6 +77,8 @@ function App() {
                 todos={todos}
                 deleteTodo={deleteTodo}
                 toggleTodo={toggleTodo}
+                toggleEditTodo={toggleEditTodo}
+                updateTodoTitle={updateTodoTitle}
             />
         </>
     );
