@@ -42,7 +42,7 @@ const NewTodoForm = ({
                 onChange={(e) => setNewItem(e.target.value)}
                 type="text"
                 className="w-full border-2 rounded-md px-3 py-3 bg-[#E8ECF4] backdrop-blur-lg"
-                placeholder="Enter new todo"
+                placeholder="Enter todo"
             />
             <Button text="Add" color="bg-primary" classes="" />
         </form>

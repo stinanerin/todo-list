@@ -4,7 +4,6 @@ const TodoItem = ({
     id,
     completed,
     title,
-    editing,
     toggleTodo,
     deleteTodo,
     toggleEditTodo,
