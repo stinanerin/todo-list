@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import NewTodoForm from "./components/NewTodoForm";
 import TodoList from "./components/TodoList";
 
+import "./index.css";
+
 function App() {
     const [todos, setTodos] = useState(() => {
         const localArr = localStorage.getItem("ITEMS");
@@ -70,17 +72,21 @@ function App() {
     };
 
     return (
-        <>
-            <NewTodoForm onSubmit={addTodo} />
-            <h1>Todo list</h1>
-            <TodoList
-                todos={todos}
-                deleteTodo={deleteTodo}
-                toggleTodo={toggleTodo}
-                toggleEditTodo={toggleEditTodo}
-                updateTodoTitle={updateTodoTitle}
-            />
-        </>
+        <div className="max-w-lg m-5 mx-auto flex justify-center ">
+            <div className="w-full">
+                <NewTodoForm onSubmit={addTodo} />
+                <h1 className="my-4 text-4xl uppercase font-bold tracking-tight text-gray-800 md:text-5xl dark:text-white">
+                    Todo list
+                </h1>
+                <TodoList
+                    todos={todos}
+                    deleteTodo={deleteTodo}
+                    toggleTodo={toggleTodo}
+                    toggleEditTodo={toggleEditTodo}
+                    updateTodoTitle={updateTodoTitle}
+                />
+            </div>
+        </div>
     );
 }
 
