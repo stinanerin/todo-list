@@ -12,7 +12,7 @@ const Button = ({ type, aria, onClick = () => {}, disabled = false }) => {
         case "edit":
             buttonDesign = {
                 content: <FontAwesomeIcon icon={faPencil} />,
-                classes: "bg-warning text-white border",
+                classes: "bg-warning text-white border border-warning",
                 aria,
             };
             break;
@@ -26,7 +26,7 @@ const Button = ({ type, aria, onClick = () => {}, disabled = false }) => {
         default:
             buttonDesign = {
                 content: <FontAwesomeIcon icon={faPlus} />,
-                classes: "bg-primary text-white border",
+                classes: "bg-primary text-white border border-primary",
                 aria,
             };
             break;
@@ -37,6 +37,7 @@ const Button = ({ type, aria, onClick = () => {}, disabled = false }) => {
     } ${buttonDesign.classes}`;
 
     const handleClick = () => {
+        // Only apply the passed down onClick funtion if the btn is not disabled
         if (!disabled) {
             onClick();
         }

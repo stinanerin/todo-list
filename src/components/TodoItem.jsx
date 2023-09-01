@@ -20,7 +20,9 @@ const TodoItem = ({
                 />
                 <label
                     htmlFor={`todoCheckbox-${id}`}
-                    className={`ml-4 ${completed ? "line-through" : ""}`}
+                    className={`ml-4 text-text ${
+                        completed ? "line-through" : ""
+                    }`}
                 >
                     {title}
                 </label>

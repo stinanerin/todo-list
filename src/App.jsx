@@ -74,11 +74,11 @@ function App() {
     return (
         <div className="max-w-lg  mb-5 mx-auto flex justify-center ">
             <div className="w-full">
-                <h1 className="my-10 text-4xl text-center uppercase font-bold tracking-tight text-gray-800 l dark:text-white">
+                <h1 className="my-10 text-4xl text-center uppercase font-bold tracking-tight text-text ">
                     Check it - forget it
                 </h1>
                 <NewTodoForm onSubmit={addTodo} />
-                <h2 className="my-6 text-2xl  uppercase font-bold tracking-tight text-gray-800 l dark:text-white">
+                <h2 className="my-6 text-2xl  uppercase font-bold tracking-tight text-text ">
                     Todo list
                 </h2>
                 <TodoList
