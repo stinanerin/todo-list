@@ -35,7 +35,7 @@ const Button = ({ type, aria, onClick = () => {}, disabled = false }) => {
         case "dark-mode":
             buttonDesign = {
                 content: <FontAwesomeIcon icon={faMoon} />,
-                classes: " text-text border border-border bg-elem_bg ",
+                classes: "text-text border border-border bg-elem_bg ",
                 aria,
             };
             break;
@@ -48,7 +48,7 @@ const Button = ({ type, aria, onClick = () => {}, disabled = false }) => {
             break;
     }
 
-    const buttonClasses = `px-5 py-2 font-medium rounded-md ${
+    const buttonClasses = `px-3 py-1 md:px-4 md:py-2 text-m  rounded-md ${
         disabled ? "opacity-50 cursor-not-allowed" : ""
     } ${buttonDesign.classes}`;
 

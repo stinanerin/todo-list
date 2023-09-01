@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from "tailwindcss/defaultTheme";
+
 export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
@@ -21,6 +24,10 @@ export default {
                     300: "hsl(var(--color-grey-300) / <alpha-value>)",
                 },
             },
+        },
+        screens: {
+            xs: "540px",
+            ...defaultTheme.screens,
         },
     },
     plugins: [],

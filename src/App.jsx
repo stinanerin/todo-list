@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import NewTodoForm from "./components/NewTodoForm";
 import TodoList from "./components/TodoList";
-import ToggleDarkMode from "./components/ToggleDarkMode";
+import Header from "./components/Header";
 
 import "./index.css";
 
@@ -73,14 +73,12 @@ function App() {
     };
 
     return (
-        <div className="max-w-lg  mb-5 mx-auto flex justify-center ">
-            <div className="w-full">
-                <ToggleDarkMode />
-                <h1 className="my-10 text-4xl text-center uppercase font-bold tracking-tight text-text ">
-                    Check it - forget it
-                </h1>
+        <div className=" max-w-lg mx-3 mb-5 xs:mx-auto flex justify-center  ">
+            <div className="w-full ">
+                <Header />
+
                 <NewTodoForm onSubmit={addTodo} />
-                <h2 className="my-6 text-2xl  uppercase font-bold tracking-tight text-text ">
+                <h2 className="my-6 text-xl md:text-2xl  uppercase font-bold tracking-tight text-text ">
                     Todo list
                 </h2>
                 <TodoList
