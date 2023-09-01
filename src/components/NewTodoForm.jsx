@@ -15,6 +15,7 @@ const NewTodoForm = ({
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // If a todoTitle is passed - the form is used to edit an exisiting todo
         if (todoTitle) {
             updateTodoTitle(id, newItem);
             toggleEditTodo(id);
@@ -31,7 +32,9 @@ const NewTodoForm = ({
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex justify-center items-center gap-6"
+            className={`flex justify-between items-center gap-6 ${
+                todoTitle && "mb-4"
+            }`}
         >
             {/* 
                 onChange in react is triggered every time we click a key (in v.js we use onInput)
@@ -41,10 +44,10 @@ const NewTodoForm = ({
                 value={newItem}
                 onChange={(e) => setNewItem(e.target.value)}
                 type="text"
-                className="w-full border-2 rounded-md px-3 py-3 bg-[#E8ECF4] backdrop-blur-lg"
+                className={`w-full border border-grey_300 rounded-md px-3 py-2 bg-grey_100 backdrop-blur-lg`}
                 placeholder="Enter todo"
             />
-            <Button text="Add" color="bg-primary" classes="" />
+            <Button type="add" aria="Add todo" />
         </form>
     );
 };

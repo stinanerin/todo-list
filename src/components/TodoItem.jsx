@@ -25,15 +25,15 @@ const TodoItem = ({
                 onClick={deleteTodo(id);}
             */}
             <Button
-                text="Edit"
-                color="bg-secondary"
+                type="edit"
+                aria="Edit todo"
                 onClick={() => {
                     toggleEditTodo(id);
                 }}
             />
             <Button
-                text="Delete"
-                color="bg-danger"
+                type="delete"
+                aria="Delete todo"
                 onClick={() => {
                     deleteTodo(id);
                 }}

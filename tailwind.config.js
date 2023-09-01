@@ -7,7 +7,10 @@ export default {
             colors: {
                 primary: "#2E97D9",
                 secondary: "#6C757D",
-                danger: "#d92e2e",
+                warning: "#f7941e",
+                danger: "#fc3544",
+                grey_100: "#E8ECF4",
+                grey_300: "#bac6de",
                 // Add more color variables as needed
             },
         },
