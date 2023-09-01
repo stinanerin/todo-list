@@ -2,15 +2,24 @@
 export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
-        //todo: Kolla upp darkmode
         extend: {
             colors: {
-                primary: "#2E97D9",
-                secondary: "#6C757D",
-                warning: "#f7941e",
-                danger: "#fc3544",
-                grey_100: "#E8ECF4",
-                grey_300: "#bac6de",
+                bkg: "hsl(var(--color-bg) / <alpha-value>)",
+                text: "hsl(var(--color-text) / <alpha-value>)",
+                placeholder:
+                    "hsl(var(--color-text-low-contrast) / <alpha-value>)",
+                elem_bg: "hsl(var(--color-elem-bg) / <alpha-value>)",
+                border: "hsl(var(--color-elem-border) / <alpha-value>)",
+                primary: "hsl(var(--color-primary) / <alpha-value>)",
+                secondary: "hsl(var(--color-secondary) / <alpha-value>)",
+                warning: "hsl(var(--color-warning) / <alpha-value>)",
+                // warning_contrast:
+                // "hsl(var(--color-warning-contrast) / <alpha-value>)",
+                danger: "hsl(var(--color-danger) / <alpha-value>)",
+                grey: {
+                    100: "hsl(var(--color-grey-100) / <alpha-value>)",
+                    300: "hsl(var(--color-grey-300) / <alpha-value>)",
+                },
             },
         },
     },
