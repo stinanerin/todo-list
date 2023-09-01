@@ -72,12 +72,15 @@ function App() {
     };
 
     return (
-        <div className="max-w-lg m-5 mx-auto flex justify-center ">
+        <div className="max-w-lg  mb-5 mx-auto flex justify-center ">
             <div className="w-full">
-                <NewTodoForm onSubmit={addTodo} />
-                <h1 className="my-4 text-4xl uppercase font-bold tracking-tight text-gray-800 md:text-5xl dark:text-white">
-                    Todo list
+                <h1 className="my-10 text-4xl text-center uppercase font-bold tracking-tight text-gray-800 l dark:text-white">
+                    Check it - forget it
                 </h1>
+                <NewTodoForm onSubmit={addTodo} />
+                <h2 className="my-6 text-2xl  uppercase font-bold tracking-tight text-gray-800 l dark:text-white">
+                    Todo list
+                </h2>
                 <TodoList
                     todos={todos}
                     deleteTodo={deleteTodo}
