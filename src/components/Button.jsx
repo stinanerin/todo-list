@@ -5,7 +5,7 @@ import {
     faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Button = ({ type, aria, onClick = () => {} }) => {
+const Button = ({ type, aria, onClick = () => {}, disabled = false }) => {
     let buttonDesign = {};
 
     switch (type) {
@@ -32,11 +32,22 @@ const Button = ({ type, aria, onClick = () => {} }) => {
             break;
     }
 
+    const buttonClasses = `h-full px-5 py-2 font-medium rounded-md ${
+        disabled ? "opacity-50 cursor-not-allowed" : ""
+    } ${buttonDesign.classes}`;
+
+    const handleClick = () => {
+        if (!disabled) {
+            onClick();
+        }
+    };
+
     return (
         <button
-            onClick={onClick}
-            className={`h-full px-5 py-2 font-medium rounded-md ${buttonDesign.classes}`}
+            onClick={handleClick}
+            className={buttonClasses}
             aria-label={buttonDesign.aria}
+            disabled={disabled}
         >
             {buttonDesign.content}
         </button>

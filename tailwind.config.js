@@ -11,7 +11,6 @@ export default {
                 danger: "#fc3544",
                 grey_100: "#E8ECF4",
                 grey_300: "#bac6de",
-                // Add more color variables as needed
             },
         },
     },
